@@ -1,5 +1,6 @@
 require 'rubygems'
 require 'sinatra'
+require 'pry'
  
 set :sessions, true
 
@@ -19,6 +20,8 @@ post '/set_name' do
 end
 
 get '/game' do
+	binding.pry
+
 	session[:deck] = [['2', 'H'], ['3', 'Q']]
 	session[:player_cards] = []
 	session[:player_cards] <<  session[:deck].pop 
